@@ -1,2 +1,1 @@
-print("Hello")
-print("Welcome to DBAS3018")
+print("hello, welcome to class")
