@@ -1,0 +1,73 @@
+						PROG 1700 JAVASCRIPT – FINAL PROJECT
+						CLIENT-SIDE JAVASCRIPT PROGRAMMING
+
+								PSEUDOCODE
+
+PROGRAM START
+
+A. HTML
+1.Build website layout/wireframe
+2.Initialize HTML document
+3.Create head section and create a link to the css style 
+4.Create title element
+5.Create body section
+	5.1 Create div element "container" to store the whole page
+	5.2 Indise "container" 
+		Create div "countryNameList" to store a dropdown for user selects the country 
+		Create div "countryNameBox" to store the name of the selected country from user
+		Create div "flagBox" to store the flag of the selected country
+		Create div "populationBox" to store the population of the selected country
+		Create div "unit" to store the dropdown box for user select a country AND a div "areaBox" to store the value of Area for selected country
+		Create div to store radio buttons "popRadio" for user select miles or kilometer and call function CalPopDensity when value is checked
+		Create div "popDensityBox" to store the population desity of the selected country
+		Create div "percentOfPopulation" to store the percentage of world population of the selected country
+		Create div "button" to store 2 buttons wikiCountry and launchQuiz
+	5.3 Link the html to the script
+5.Close body section and html.
+
+B. JAVASCRIPT
+1. Initialize global variables
+	1.1 Set name "country" for local storage and store it in variable name "countriesArray"
+	1.2 Get the element by id named "countryNameBox","populationBox","areaBox","popDensityBox","flagBox", "countryNameList","areaIn","popRadio" 
+		AND store them in corresponding variables named countryName, population, areaBox, popDensityBox, flag, userchoice, userChoiceArea, 			userChoiceDensity
+	1.3 Declare a variable name indexCountry to Store the index of a selected country.
+2. Load data from local storage and parse data into an variable "countriesArray"
+3. Add event listeners for dropbox, button and radio button to call function DisplayCountryData
+4. Create functions following the requirements and display data to the website:
+
+	4.1 function named "addCountryList" to load countries list to the dropbox
+		4.1.1 Declare a variable named "html_code" to Store the html codes for html page
+		4.1.2 Loop through the list of countries which stored in variable "coutriesArray" 
+		4.1.3 Add each elements of dropdown menu by adding tag option to html code 
+	
+	4.2 function named "DisplayPopulationData" to calculate % of population
+		4.2.1 Declare a variable name "totalPopulation"
+		4.2.2 Loop through the list of countries which stored in variable "coutriesArray" and add population of each country to "totalPopulation"
+		4.2.3 Calculate percent of population by divide the selected country's population to total population then multiple to 100.
+		4.2.4 Display the percentage of population to the website via the element "percentOfPopulation"
+	
+	4.3 function named "CalculateAreaInKM" to calculate area by kilometes or Miles
+		4.3.1 Declare a variable name "areaNumber"
+		4.3.2 IF index of selected country's value is equal to 0 (means user chose miles) 
+		      THEN Display the value of countriesArray at the selected index and value "Area".
+		4.3.3 ELSE (mean user chose Kilometers) THEN get the area value of selected country multiple to 2.58988
+		4.3.4 RETURN the value of areaNumber
+	
+	4.4 function named "CalPopDensity" to calculate population density by miles or km
+		4.4.1 Declare a variable name "popDen"
+		4.4.2 IF user checked on the option of miles
+		      THEN calculate popDen by get the population value of the selected country divide to area value of the selected country
+		4.4.3 ELSE IF user checked on the option of Kilometer 
+		      THEN calculate popDen by get the population value of the selected country divide to the muliple of area value of the 
+			selected country and 2.589988
+		4.4.4 RETURN the value of popDen
+	
+	4.5 function named "DisplayCountryData" to display data of a selected country 
+		Call other functions to display all the information on the html page through global variables countryName, population, areaBox, 
+		popDensityBox, flag, userchoice, userChoiceArea, userChoiceDensity
+	
+	4.6 function named "launchWiki" to launch the Wikipedia page for the selected country when user click button "Wiki Country"
+		Declare a variable name "countrySelect" to Store the text of selected country
+		Replace the country name in the address of web browser to load the infos of selected country
+
+PROGRAM END

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="#" />
+    <title>PROG1700 (HANG NGO) - Final Project</title>
+  </head>
+  <body onload="launchQuiz()">
+    <!-- div container-->
+    <div id="container_quiz">
+
+        <!--This is main left-->
+        <div class="div_left">
+          <h3>Flags Quiz:</h3>
+          <div id="flag_quiz"></div>
+          <h5 id="divTitle">What country's flag is this?</h5>
+           <!--Dropbox to display name of country for user select-->
+          <div id="country_quiz">
+            <form > 
+              <select class="dropbox_quiz" id="countryName_quiz" name ="countryName_quiz" title="country" >     
+              </select>
+            </form>
+          
+          </div>
+          
+         <div id="result_quiz"></div>
+           <!--Buttons-->
+        <div>
+             <!--Reset Button-->
+            <button id="reset_button" class="btton" onclick="resetQuiz()">Reset</button>
+            <!--Cancel Button-->
+            <button id="cancel_button" class="btton"><a href="/index.html" role="button">Cancel</a></button>
+              <!--Next Button-->
+            
+        </div>
+        </div> <!--Close for div left-->
+          
+        <!--This is main right-->
+          <div class="div_right">
+            <div><button id="button_next" class="btton">Next</button></div>
+          <div>
+          <p id="message"></p></div>
+          <div id="table_score"></div>
+        </div><!--close for main right-->
+
+  </div> <!--close for container-->
+    <script src="script.js"></script>
+
+  </body>
+</html>

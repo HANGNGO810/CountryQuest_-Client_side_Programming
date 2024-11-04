@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="#" />
+  <title>PROG1700 (HANG NGO) - Final Project</title>
+</head>
+  <body>
+    <div id="container"> <!--Open for the container div-->
+
+      <!--On the left hand side: form to let user choose the country from the list-->
+      <div id="left">
+          <h2 id="selectedCountry">Choose a country from a list </h2>
+          <form> 
+            <select id="countryNameList" name ="countryNameList" title="country">     
+            </select>
+          </form>
+      </div> <!--close div on the left-->
+
+      <!--On the right hand-side-->
+      <div id="right">
+          <!--Country information area-->
+          <h2>Country Info:</h2>
+          <div id="countryNameBox"></div>
+
+          <div id="flagBox"></div>
+
+          <!--Population area-->
+          <h4> Population:</h4>
+          <div id="populationBox" class="textBox"></div>
+          <!--Area In-->
+          <h4> Area in:</h4>
+          <div id="unit">
+            <form> 
+              <select id="areaIn" name ="area" title="area">
+                <option value="0">Sq. Miles</option>
+                <option value="1">Sq. Km</option>     
+              </select>
+            </form>
+          <div id="areaBox" class="textBox"></div>
+        </div>
+        <!--Population Density area-->
+          <h4>Population Density:</h4>
+          <div>
+          <form id ="popRadio">
+              <input type="radio" id="miles" name="density" value="miles" onclick="CalPopDensity()" checked>
+              <label for="miles">Per Square Mile</label>
+              <input type="radio" id="km" name="density" value="km" onclick="CalPopDensity()">
+              <label for="km">Per Square KM</label>
+          </form>
+          </div>
+          <div id ="popDensityBox" class="textBox"></div>
+        <!--Percentage of World Population-->
+          <h4>Percentage of World Population:</h4>
+          <div id="percentOfPopulation" class="textBox"></div>
+
+          <!--Button to launch WikiPedia-->
+          <div id="button">
+          <button id="wikiCountry" class="btton" onclick="return launchWiki()">Wiki Country</button>
+          <!--Button to Launch the Quiz-->
+          <button id="launchQuiz" class="btton"><a href="/launchQuiz.html" role="button">Launch Quiz</a></button>  
+        
+          </div>
+
+      </div><!--close div on the right-->
+
+    </div>  <!--close for the container div-->
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
